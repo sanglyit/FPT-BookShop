@@ -74,7 +74,7 @@ namespace FPT_Library.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 		[AuthLog("Create", "Admin")]
-		public async Task<IActionResult> Create([Bind("Id,Name,Category")] Books books)
+		public async Task<IActionResult> Create([Bind("Id,Name,Category,Author")] Books books)
         {
             if (ModelState.IsValid)
             {
@@ -106,7 +106,7 @@ namespace FPT_Library.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Category")] Books books)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Category,Author")] Books books)
         {
             if (id != books.Id)
             {
