@@ -12,5 +12,6 @@ namespace FPT_Library.Data
         }
         public DbSet<FPT_Library.Models.ApplicationRole> ApplicationRole { get; set; } = default!;
         public DbSet<FPT_Library.Models.Books> Books { get; set; } = default!;
+        public DbSet<FPT_Library.Models.CartItem> CartItem { get; set; } = default!;
     }
 }
