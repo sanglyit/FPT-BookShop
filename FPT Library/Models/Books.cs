@@ -12,6 +12,9 @@ namespace FPT_Library.Models
         public string? Name { get; set; }
         [Required]
         public string? Category { get; set; }
-        
+        [Required]
+        public string? Author { get; set; }
+
+
     }
 }

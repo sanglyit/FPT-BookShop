@@ -10,8 +10,6 @@ namespace FPT_Library.Models
 		public string? FullName { get; set; }
 		
 		[StringLength(50)]
-		public string? Email { get; set; }
-		[StringLength(50)]
 		public string? HomeAddress { get; set; }
 	}
 }
