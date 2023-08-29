@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FPT_Library.Data;
 using FPT_Library.Models;
+using FPT_Library.CustomFilters;
 
 namespace FPT_Library.Controllers
 {
@@ -46,6 +47,7 @@ namespace FPT_Library.Controllers
         }
 
         // GET: AppRoles/Create
+        [AuthLog("Create", "Admin")]
         public IActionResult Create()
         {
             return View();
@@ -56,6 +58,7 @@ namespace FPT_Library.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AuthLog("Create", "Admin")]
         public async Task<IActionResult> Create([Bind("Id,Name,NormalizedName,ConcurrencyStamp")] ApplicationRole applicationRole)
         {
             if (ModelState.IsValid)
