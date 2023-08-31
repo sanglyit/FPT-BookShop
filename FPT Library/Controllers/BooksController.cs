@@ -86,6 +86,7 @@ namespace FPT_Library.Controllers
         }
 
         // GET: Books/Edit/5
+        [AuthLog("Edit", "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Books == null)
@@ -106,6 +107,7 @@ namespace FPT_Library.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AuthLog("Edit", "Admin")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Category,Author")] Books books)
         {
             if (id != books.Id)
@@ -137,6 +139,7 @@ namespace FPT_Library.Controllers
         }
 
         // GET: Books/Delete/5
+        [AuthLog("Delete", "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Books == null)
@@ -157,6 +160,7 @@ namespace FPT_Library.Controllers
         // POST: Books/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [AuthLog("Delete", "Admin")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Books == null)

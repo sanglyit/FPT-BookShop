@@ -72,6 +72,7 @@ namespace FPT_Library.Controllers
         }
 
         // GET: AppRoles/Edit/5
+        [AuthLog("Edit", "Admin")]
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null || _context.ApplicationRole == null)
@@ -92,6 +93,7 @@ namespace FPT_Library.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AuthLog("Edit", "Admin")]
         public async Task<IActionResult> Edit(string id, [Bind("Id,Name,NormalizedName,ConcurrencyStamp")] ApplicationRole applicationRole)
         {
             if (id != applicationRole.Id)
@@ -123,6 +125,7 @@ namespace FPT_Library.Controllers
         }
 
         // GET: AppRoles/Delete/5
+        [AuthLog("Delete", "Admin")]
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null || _context.ApplicationRole == null)
@@ -143,6 +146,7 @@ namespace FPT_Library.Controllers
         // POST: AppRoles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [AuthLog("Delete", "Admin")]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
             if (_context.ApplicationRole == null)
